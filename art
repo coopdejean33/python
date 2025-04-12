@@ -1,0 +1,29 @@
+import turtle
+import random
+
+def draw_spiral():
+    # Set up the screen
+    screen = turtle.Screen()
+    screen.bgcolor("black")
+    screen.title("Cool Spiral Art")
+
+    # Create a turtle object
+    artist = turtle.Turtle()
+    artist.speed(0)  # Set the fastest speed
+    artist.width(2)  # Set the pen width
+    colors = ["red", "blue", "green", "yellow", "purple", "orange"]
+
+    # Draw the spiral
+    for i in range(360):
+        artist.color(random.choice(colors))  # Pick a random color
+        artist.forward(i * 2)
+        artist.right(59)  # Angle for the spiral
+
+    # Hide the turtle
+    artist.hideturtle()
+
+    # Keep the window open until clicked
+    screen.mainloop()
+
+if __name__ == "__main__":
+    draw_spiral()
